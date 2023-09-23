@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Data Enrichment</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS styles here */
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>LinkedIn Data Enrichment</h1>
+        <form id="uploadForm">
+            <div class="form-group">
+                <label for="fileUpload">Upload CSV or XLSX File:</label>
+                <input type="file" class="form-control-file" id="fileUpload" accept=".csv, .xlsx">
+            </div>
+            <button type="button" class="btn btn-primary" id="uploadButton">Upload</button>
+        </form>
+        <hr>
+        <div id="searchResults" class="d-none">
+            <h3>Search Results</h3>
+            <!-- Display search results here -->
+            <!-- Example structure: -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">LinkedIn Profile 1</h5>
+                    <p class="card-text">Company: Company Name</p>
+                    <button class="btn btn-success select-profile">Select</button>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-secondary mt-3" id="goBackButton">Go Back</button>
+    </div>
+
+    <!-- Add Bootstrap JS and jQuery links here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#uploadButton").click(function () {
+                // Handle file upload and data extraction here
+                // You will need to use JavaScript and possibly a library like PapaParse for CSV parsing and an XLSX library for Excel parsing
+
+                // Once you have the data, display the search results in the #searchResults div
+                $("#searchResults").removeClass("d-none");
+            });
+
+            // Handle the "Go Back" button click
+            $("#goBackButton").click(function () {
+                // Hide the search results and show the upload form again
+                $("#searchResults").addClass("d-none");
+            });
+
+            // Handle selecting a profile and appending data to the uploaded file
+            $("#searchResults").on("click", ".select-profile", function () {
+                // Implement this functionality based on your specific requirements
+            });
+        });
+    </script>
+</body>
+</html>
